@@ -2,16 +2,10 @@ import requests
 import json
 
 class piShock:
-    username: str = None
-    apikey: str = None
-    code: str = None
-    name: str = None
-    operation: str = None
-    intensity: int = None
-    duration: int = None
     def __init__(self):
+        #Only need new, but dosn't work without init.
         pass
-    def __new__(self, username, apikey, code, name, operation, intensity, duration):
+    def __new__(cls, username, apikey, code, name, operation, intensity, duration):
         if username == None or apikey == None or code == None or name == None or operation == None or intensity == None or duration == None:
             """Missing required parameters"""
         elif name == "PiShock":
