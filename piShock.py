@@ -2,10 +2,7 @@ import requests
 import json
 
 class piShock:
-    def __init__(self):
-        #Only need new, but dosn't work without init.
-        pass
-    def __new__(cls, username, apikey, code, name, operation, intensity, duration):
+    def __init__(self, username, apikey, code, name, operation, intensity, duration):
         if username == None or apikey == None or code == None or name == None or operation == None or intensity == None or duration == None:
             """Missing required parameters"""
         elif name == "PiShock":
@@ -14,7 +11,13 @@ class piShock:
             """Duration must be between 1 and 10"""
         elif intensity > 100 or intensity < 1:
             """Intensity must be between 1 and 100"""
-        else:
+    def shock(self):
+        pass
+
+
+
+#Submit api request.
+def do(username, apikey, code, name, operation, intensity, duration):
             session = requests.Session()
             session.params = {}
             session.params['Username'] = username
