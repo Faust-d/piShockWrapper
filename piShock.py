@@ -39,7 +39,8 @@ class piShock:
         Vibe the device for a duration of time.
         Requires Username, API Key, Share Code, a name for the API call, duration between 1-15, and intensity between 1-100.
 
-        Use: piShock.vibe(username, apikey, code, name, duration, intensity)"""
+        Use: piShock.vibe(username, apikey, code, name, duration, intensity)
+        """
         operation = 1
         return do(username, apikey, code, name, operation, duration, intensity)
 
