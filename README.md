@@ -33,6 +33,7 @@ There are three methods included with the piShock API Wrapper.
 The API will return a result as a list.
 * `[httpcode, 'result string']`
   - IE: `[200, 'Operation Succeeded.']`
+  
 Please refer to the API documentation for a list of status codes and responses.
 
 # piVault
