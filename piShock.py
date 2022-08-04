@@ -11,10 +11,8 @@ class piShock:
     Beep: piShock.beep(username, apikey, code, name, duration)
     """
     def __init__(self, username:str, apikey:str, code:str, name:str, duration:int=0, intensity:int=0, warning:int=0):
-        if username == None or apikey == None or code == None or name == None or intensity == None or duration == None:
-            """Missing required parameters"""
-        elif name == "PiShock":
-            """'name' must be different from PiShock"""
+        if name.lower() == "pishock":
+            """'name' must be different from piShock"""
         elif duration > 15 or duration < 1:
             """Duration must be between 1 and 15"""
         elif intensity > 100 or intensity < 1:
@@ -28,11 +26,10 @@ class piShock:
 
         Use: piShock.shock(username, apikey, code, name, duration, intensity, <<Optional>warning)
         """
-        operation = 0
         if warning > 0:
             do(username, apikey, code, name, 1, 1, intensity)
             time.sleep(warning)
-        return do(username, apikey, code, name, operation, duration, intensity)
+        return do(username, apikey, code, name, 0, duration, intensity)
 
     def vibe(username:str, apikey:str, code:str, name:str, duration:int, intensity:int):
         """
@@ -41,8 +38,7 @@ class piShock:
 
         Use: piShock.vibe(username, apikey, code, name, duration, intensity)
         """
-        operation = 1
-        return do(username, apikey, code, name, operation, duration, intensity)
+        return do(username, apikey, code, name, 1, duration, intensity)
 
     def beep(username:str, apikey:str, code:str, name:str, duration:int):
         """
@@ -51,8 +47,7 @@ class piShock:
         
         Use: piShock.beep(username, apikey, code, name, duration)
         """
-        operation = 2
-        return do(username, apikey, code, name, operation, duration)
+        return do(username, apikey, code, name, 2, duration)
 
         
 #Submit api request.
