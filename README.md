@@ -31,9 +31,9 @@ There are three methods included with the piShock API Wrapper.
   - `piShock.beep(username, apikey, code, name, duration)`
 
 The API will return a result as a list.
-`[httpcode, 'result string']`
-IE: `[200, 'Operation Succeeded.']`
-Please refer to the APi documentation for a list of status codes and responses.
+* `[httpcode, 'result string']`
+  - IE: `[200, 'Operation Succeeded.']`
+Please refer to the API documentation for a list of status codes and responses.
 
 # piVault
 Currently piVault functionality is unimplimented, but will be worked on as soon as possible.
