@@ -20,12 +20,12 @@ Please read the piShock safety disclaimers before using, I am not liable for wha
   - Warning will vibe for 1 second at the specified intensity, and wait for the duration specified before sending a shock.
 
 There are three methods included with the piShock API Wrapper.
-* Shock `piShock.shock`
-  - `piShock.shock(username, apikey, sharecode, name, duration, intensity, <Optional>warning)`
-* Vibrate `piShock.vibe`
-  - `piShock.vibe(username, apikey, code, name, duration, intensity)`
-* Beep `piShock.beep`
-  - `piShock.beep(username, apikey, code, name, duration)`
+* Shock `piShock().shock()`
+  - `piShock(username, apikey, sharecode, name, duration, intensity, warning).shock()`
+* Vibrate `piShock().vibe()`
+  - `piShock(username, apikey, code, name, duration, intensity).vibe()`
+* Beep `piShock().beep()`
+  - `piShock(username, apikey, code, name, duration).beep()`
 
 The API will return a result as a list.
 * `[httpcode, 'result string']`

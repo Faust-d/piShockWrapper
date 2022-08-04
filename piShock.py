@@ -17,8 +17,15 @@ class piShock:
             """Duration must be between 1 and 15"""
         elif intensity > 100 or intensity < 1:
             """Intensity must be between 1 and 100"""
+        self.username = username
+        self.apikey = apikey
+        self.code = code
+        self.name = name
+        self.duration = duration
+        self.intensity = intensity
+        self.warning = warning
 
-    def shock(username:str, apikey:str, code:str, name:str, duration:int, intensity:int,  warning:int=0):
+    def shock(self):
         """
         Shock the device for a duration of time, with warning if desired.
         Requires Username, API Key, Share Code, a name for the API call, duration between 1-15, and intensity between 1-100.
@@ -26,28 +33,28 @@ class piShock:
 
         Use: piShock.shock(username, apikey, code, name, duration, intensity, <<Optional>warning)
         """
-        if warning > 0:
-            do(username, apikey, code, name, 1, 1, intensity)
-            time.sleep(warning)
-        return do(username, apikey, code, name, 0, duration, intensity)
+        if self.warning > 0:
+            do(self.username, self.apikey, self.code, self.name, 1, 1, self.intensity)
+            time.sleep(self.warning)
+        return do(self.username, self.apikey, self.code, self.name, 0, self.duration, self.intensity)
 
-    def vibe(username:str, apikey:str, code:str, name:str, duration:int, intensity:int):
+    def vibe(self):
         """
         Vibe the device for a duration of time.
         Requires Username, API Key, Share Code, a name for the API call, duration between 1-15, and intensity between 1-100.
 
         Use: piShock.vibe(username, apikey, code, name, duration, intensity)
         """
-        return do(username, apikey, code, name, 1, duration, intensity)
+        return do(self.username, self.apikey, self.code, self.name, 1, self.duration, self.intensity)
 
-    def beep(username:str, apikey:str, code:str, name:str, duration:int):
+    def beep(self):
         """
         Beep the device for a duration of time.
         Requires Username, API Key, Share Code, a name for the API call, duration between 1-15.
         
         Use: piShock.beep(username, apikey, code, name, duration)
         """
-        return do(username, apikey, code, name, 2, duration)
+        return do(self.username, self.apikey, self.code, self.name, 2, self.duration)
 
         
 #Submit api request.
