@@ -4,13 +4,10 @@ This is a simple wrapper for the piShock, and soon the piVault as well.
 Please read the piShock safety disclaimers before using, I am not liable for what you do with my script.
 
 # Setup
-* Install Python 3
-* Open a terminal/command prompt and run `pip install requests`
-
-# Use
-You can import piShock or piVault API wrappers seperately, simply by including 
-* `from piShockWrapper import piShock`
-* `from piShockWrapper import piVault`
+* Use pip to install requests.
+* Import piShock and/or piVault.
+  - `from piShockWrapper import piShock`
+  - `from piShockWrapper import piVault`
 
 # piShock
 * `username`, string, your piShock username
@@ -33,7 +30,7 @@ There are three methods included with the piShock API Wrapper.
 The API will return a result as a list.
 * `[httpcode, 'result string']`
   - IE: `[200, 'Operation Succeeded.']`
-  
+
 Please refer to the API documentation for a list of status codes and responses.
 
 # piVault
